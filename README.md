@@ -1,5 +1,6 @@
-React application that uses and OMS and Customer Service
-The layout of menu/pane with ionic was inspired from the article here: [Let's add a side menu and a toast to an Ionic 
+React application that uses an OMS and a Customer Service.
+
+The layout of menu/pane with ionic was inspired from the following article: [Let's add a side menu and a toast to an Ionic 
 React application](https://medium.com/@BartInTheField/lets-add-a-side-menu-and-a-toast-to-an-ionic-react-application-6b503955fadf).
 
 Dependencies:
