@@ -1,3 +1,14 @@
+React application that uses and OMS and Customer Service
+The layout of menu/pane with ionic was inspired from the article here: [Let's add a side menu and a toast to an Ionic 
+React application](https://medium.com/@BartInTheField/lets-add-a-side-menu-and-a-toast-to-an-ionic-react-application-6b503955fadf).
+
+Dependencies:
+- OMS service called at: http://localhost/orders
+- Customer service called at: http://localhost/customers
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

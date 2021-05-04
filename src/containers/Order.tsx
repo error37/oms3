@@ -4,7 +4,7 @@ export class LineItem {
     description!: string;
     extendedAmount!: bigint;
     extendedDiscountAmount!: bigint;
-    id!: bigint;
+    id!: string;
     lastModified!: string;
     orderObjectId!: bigint;
     sequenceNumber!: bigint;
@@ -17,7 +17,7 @@ export class LineItem {
 export class Order {
     id!: string;
     channel!: string;
-    customerId!: bigint;
+    customerId!: string;
     lastModified!: string;
     lineItem!: LineItem[];
     specialOrderNumber!: string;

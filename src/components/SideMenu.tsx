@@ -11,7 +11,7 @@ interface Page {
 const pages: Page[] = [
     { title: 'New Orders', path: '/new', icon: 'goCloudDownload' },
     { title: 'Orders in Process', path: '/inprogress', icon: 'GoGitPullRequest' },
-    { title: 'Processed Orders', path: '/processed', icon: 'GoCloudUpload' }
+    { title: 'Processed Orders', path: '/processed', icon: 'GoCloudUpload' },
 ];
 
 type Props = RouteComponentProps<{}>;

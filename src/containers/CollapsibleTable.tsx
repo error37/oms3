@@ -40,13 +40,14 @@ const usePopOverStyles = makeStyles((theme) => ({
 }));
 
 const fetchInterval: number = 10000;
-
+const customerServiceURL = `http://localhost/customers`;
+const orderServiceURL = `http://localhost/orders`;
 
 const custom = new Customer();
 export function FetchCustomer(props: any) {
     const { id } = props;
     const [customer, getCustomer] = useState(custom);
-    const url = `http://localhost/customers/` + id;
+    const url = customerServiceURL + '/' + id;
 
     useEffect(() => { getMyCustomer();}, []);
 
@@ -233,7 +234,8 @@ export default class CollapsibleTable extends React.Component<ListProps, ListSta
     }
 
     public deleteOrder(id: number) {
-        axios.delete(`http://localhost/orders/${id}`).then(data => {
+        const url = orderServiceURL + '/' + id;
+        axios.delete(url).then(data => {
             const index = this.state.orders.findIndex(order => order.id === id + '');
             this.state.orders.splice(index, 1);
             console.log('Deleted order ' + id);
@@ -242,8 +244,9 @@ export default class CollapsibleTable extends React.Component<ListProps, ListSta
 
     public processOrder(id: number, context: string) {
         let newStatus = 'In process';
+        const url = orderServiceURL + '/' + id;
         if (context === 'inprocess') newStatus = 'Processed'; // user clicked on 'process order' button and order was 'In process' so now order is processed
-        axios.patch(`http://localhost/orders/${id}`, {status: newStatus}).then(data => {
+        axios.patch(url, {status: newStatus}).then(data => {
             console.log('Processed order ' + id);
         }).then(() => this.fetchContent());
     }
@@ -260,7 +263,7 @@ export default class CollapsibleTable extends React.Component<ListProps, ListSta
     }
 
     private fetchContent() {
-        axios.get(`http://localhost/orders`).then(data => {
+        axios.get(orderServiceURL ).then(data => {
             const resultSet: Order[] = data.data;
             this.updateState(resultSet);
             console.log('Loaded orders from Order service')
